@@ -5,6 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class MsgserviceService {
 
+  messageAlert(){
+    alert("Thanks for subscribe");
+  }
   constructor() { }
   
 }

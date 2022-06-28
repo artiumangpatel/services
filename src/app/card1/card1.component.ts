@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MsgserviceService } from '../appServices/msgservice.service';
 
 @Component({
   selector: 'app-card1',
@@ -10,9 +11,11 @@ export class Card1Component implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  } 
+  buttonClick(){
+    const msgServices = new MsgserviceService();
+    msgServices.messageAlert();
   }
-  messageAlert(){
-    alert("Thanks for subscribe");
-  }
+
 
 }
