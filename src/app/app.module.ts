@@ -5,12 +5,16 @@ import { AppComponent } from './app.component';
 import { DesignutilityService } from './appServices/designutility.service';
 import { Card1Component } from './card1/card1.component';
 import { Card2Component } from './card2/card2.component';
+import { AccountComponent } from './account/account.component';
+import { NewAccountComponent } from './new-account/new-account.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     Card1Component,
-    Card2Component
+    Card2Component,
+    AccountComponent,
+    NewAccountComponent
   ],
   imports: [
     BrowserModule
