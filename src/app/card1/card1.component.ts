@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DesignutilityService } from '../appServices/designutility.service';
 import { MsgserviceService } from '../appServices/msgservice.service';
 
 @Component({
@@ -8,14 +9,22 @@ import { MsgserviceService } from '../appServices/msgservice.service';
 })
 export class Card1Component implements OnInit {
 
-  constructor() { }
+  constructor(private _msgservice:DesignutilityService) { }
+  
+  products : any = {};
 
-  ngOnInit(): void {
+  ngOnInit() {
+ this.products = this._msgservice.product;
+ console.log(this.products);
+
   } 
   buttonClick(){
-    const msgServices = new MsgserviceService();
-    msgServices.messageAlert();
+    this._msgservice.messageAlert();
+    // const msgServices = new MsgserviceService();
+    // msgServices.messageAlert();
   }
+
+
 
 
 }

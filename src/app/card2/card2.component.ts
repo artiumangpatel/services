@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MsgserviceService } from '../appServices/msgservice.service';
 
+import { DesignutilityService } from '../appServices/designutility.service';
 @Component({
   selector: 'app-card2',
   templateUrl: './card2.component.html',
@@ -8,12 +9,16 @@ import { MsgserviceService } from '../appServices/msgservice.service';
 })
 export class Card2Component implements OnInit {
 
-  constructor() { }
-
+  constructor(private _msgservice:DesignutilityService) { }
+   //product="test";
+   products={};
   ngOnInit(): void {
+    this.products=this._msgservice.product;
+ console.log(this.products);
   }
   buttonClick(){
-    const msgServices = new MsgserviceService();
-    msgServices.messageAlert();
+    this._msgservice.messageAlert();
+    // const msgServices = new MsgserviceService();//without dependency injection make instance
+    // msgServices.messageAlert();
   }
 }
