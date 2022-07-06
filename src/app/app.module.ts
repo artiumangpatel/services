@@ -7,6 +7,9 @@ import { Card1Component } from './card1/card1.component';
 import { Card2Component } from './card2/card2.component';
 import { AccountComponent } from './account/account.component';
 import { NewAccountComponent } from './new-account/new-account.component';
+import { AccountService } from './appServices/account.service';
+import { LoggingServiceService } from './appServices/logging-service.service';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +22,7 @@ import { NewAccountComponent } from './new-account/new-account.component';
   imports: [
     BrowserModule
   ],
-  providers: [DesignutilityService],
+  providers: [DesignutilityService,AccountService,LoggingServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
